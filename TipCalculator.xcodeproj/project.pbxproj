@@ -12,6 +12,9 @@
 		4BC0CD5D1D978EBB00A901D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0CD5B1D978EBB00A901D5 /* Main.storyboard */; };
 		4BC0CD5F1D978EBB00A901D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0CD5E1D978EBB00A901D5 /* Assets.xcassets */; };
 		4BC0CD621D978EBB00A901D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0CD601D978EBB00A901D5 /* LaunchScreen.storyboard */; };
+		4BC0CD6A1D97974A00A901D5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0CD691D97974A00A901D5 /* SettingsViewController.swift */; };
+		4BC0CD701D9A67F500A901D5 /* ApplePayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0CD6F1D9A67F500A901D5 /* ApplePayButton.swift */; };
+		4BC0CD741D9A7B3F00A901D5 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC0CD731D9A7B3F00A901D5 /* PassKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,10 @@
 		4BC0CD5E1D978EBB00A901D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC0CD611D978EBB00A901D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC0CD631D978EBB00A901D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC0CD691D97974A00A901D5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4BC0CD6F1D9A67F500A901D5 /* ApplePayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePayButton.swift; sourceTree = "<group>"; };
+		4BC0CD711D9A7B3F00A901D5 /* TipCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalculator.entitlements; sourceTree = "<group>"; };
+		4BC0CD731D9A7B3F00A901D5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC0CD741D9A7B3F00A901D5 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 			children = (
 				4BC0CD561D978EBB00A901D5 /* TipCalculator */,
 				4BC0CD551D978EBB00A901D5 /* Products */,
+				4BC0CD721D9A7B3F00A901D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,41 @@
 		4BC0CD561D978EBB00A901D5 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				4BC0CD711D9A7B3F00A901D5 /* TipCalculator.entitlements */,
+				4BC0CD6C1D9A669700A901D5 /* views */,
+				4BC0CD6B1D97974E00A901D5 /* viewcontrollers */,
 				4BC0CD571D978EBB00A901D5 /* AppDelegate.swift */,
-				4BC0CD591D978EBB00A901D5 /* ViewController.swift */,
 				4BC0CD5B1D978EBB00A901D5 /* Main.storyboard */,
 				4BC0CD5E1D978EBB00A901D5 /* Assets.xcassets */,
 				4BC0CD601D978EBB00A901D5 /* LaunchScreen.storyboard */,
 				4BC0CD631D978EBB00A901D5 /* Info.plist */,
 			);
 			path = TipCalculator;
+			sourceTree = "<group>";
+		};
+		4BC0CD6B1D97974E00A901D5 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				4BC0CD691D97974A00A901D5 /* SettingsViewController.swift */,
+				4BC0CD591D978EBB00A901D5 /* ViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		4BC0CD6C1D9A669700A901D5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4BC0CD6F1D9A67F500A901D5 /* ApplePayButton.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		4BC0CD721D9A7B3F00A901D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BC0CD731D9A7B3F00A901D5 /* PassKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +132,17 @@
 				TargetAttributes = {
 					4BC0CD531D978EBB00A901D5 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EVL2DEPTTR;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -138,6 +184,8 @@
 			files = (
 				4BC0CD5A1D978EBB00A901D5 /* ViewController.swift in Sources */,
 				4BC0CD581D978EBB00A901D5 /* AppDelegate.swift in Sources */,
+				4BC0CD6A1D97974A00A901D5 /* SettingsViewController.swift in Sources */,
+				4BC0CD701D9A67F500A901D5 /* ApplePayButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +306,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
+				DEVELOPMENT_TEAM = EVL2DEPTTR;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zkhaider.TipCalculator;
@@ -270,6 +320,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
+				DEVELOPMENT_TEAM = EVL2DEPTTR;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zkhaider.TipCalculator;
